@@ -1,11 +1,17 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UserModule } from '../src/api/user/user.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import { UserModule } from './api/user/user.module';
+import { ConfigModule } from './config/config.module';
+import { ConfigService } from './config/config.service';
 
+const configService = new ConfigService();
 @Module({
-  imports: [UserModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    MongooseModule.forRoot(configService.get('MONGO_URL')),
+    UserModule,
+    ConfigModule,
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
