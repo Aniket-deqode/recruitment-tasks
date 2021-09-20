@@ -4,6 +4,7 @@ import { Model } from 'mongoose';
 import { v4 as uuidv4 } from 'uuid';
 import { User, UserDocument } from './schema/user.model';
 import { CreateUserDTO } from './dto/createUser.input';
+import { UpdateUserDTO } from './dto/updateUser.input';
 
 @Injectable()
 export class UserService {
@@ -25,9 +26,13 @@ export class UserService {
     });
   }
 
-  async findOneAndUpdate(query: any, payload: any): Promise<User> {
+  async findOneAndUpdate(query: any, payload: UpdateUserDTO): Promise<User> {
     return this.userModel.findOneAndUpdate(query, payload, {
       new: true,
     });
+  }
+
+  async findOneAndDelete(query: any) {
+    return this.userModel.deleteOne(query);
   }
 }

@@ -1,4 +1,12 @@
-import { Controller, Post, Body, Put, Param } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Put,
+  Param,
+  Get,
+  Delete,
+} from '@nestjs/common';
 import { BadRequestException } from '@nestjs/common';
 import { User } from 'src/api/user/schema/user.model';
 import { UserService } from './user.service';
@@ -24,8 +32,8 @@ export class UserController {
       }
       const user = await this.userService.create(newUser);
       return user;
-    } catch (err) {
-      return err;
+    } catch (error) {
+      return error;
     }
   }
 
@@ -38,14 +46,40 @@ export class UserController {
       const query = { id: id };
 
       const isUser = await this.userService.findOne(query);
-      console.log('is user', isUser);
       if (!isUser) {
         throw new BadRequestException(new Error('User Does Not Exist'));
       }
       const updatedUser = await this.userService.findOneAndUpdate(query, Body);
       return updatedUser;
-    } catch (err) {
-      return err;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  @Get(':id')
+  async getUser(@Param() { id }: UserIDDTO): Promise<User> {
+    try {
+      const isUser = await this.userService.findOne({ id });
+      if (!isUser) {
+        throw new BadRequestException(new Error('User Does Not Exist'));
+      }
+      return isUser;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  @Delete(':id')
+  async delete(@Param() { id }): Promise<User> {
+    try {
+      const isUser = await this.userService.findOne({ id });
+      if (!isUser) {
+        throw new BadRequestException(new Error('User Does Not Exist'));
+      }
+      const deleteUser = await this.userService.findOneAndDelete({ id });
+      return isUser;
+    } catch (error) {
+      return error;
     }
   }
 }
