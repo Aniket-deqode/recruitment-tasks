@@ -2,7 +2,7 @@
 
 ## Description
 
-A user persistence management system that exposes an api for performing different operations on user data.
+Recruitment Task Which Performs CRUD operations on User
 
 ## Prerequisite
 
