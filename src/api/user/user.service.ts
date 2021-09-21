@@ -11,7 +11,7 @@ export class UserService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
   async findOne(query: any): Promise<any> {
-    return await this.userModel.findOne(query).select('+password');
+    return await this.userModel.findOne(query);
   }
 
   async find(query: any): Promise<User[]> {
