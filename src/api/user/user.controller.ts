@@ -6,6 +6,7 @@ import {
   Param,
   Get,
   Delete,
+  ConflictException,
 } from '@nestjs/common';
 import { BadRequestException } from '@nestjs/common';
 import {
@@ -16,6 +17,7 @@ import {
   ApiTags,
   ApiCreatedResponse,
   ApiParam,
+  ApiConflictResponse,
 } from '@nestjs/swagger';
 import { User } from 'src/api/user/schema/user.model';
 import { UserService } from './user.service';
@@ -58,6 +60,9 @@ export class UserController {
   @ApiBadRequestResponse({
     description: 'User Does Not Exist',
   })
+  @ApiConflictResponse({
+    description: 'Email already exists',
+  })
   @ApiParam({
     name: 'id',
     required: true,
@@ -76,6 +81,17 @@ export class UserController {
       if (!isUser) {
         throw new BadRequestException(new Error('User Does Not Exist'));
       }
+
+      if (Body.email) {
+        const isDuplicateEmail = await this.userService.findOne({
+          email: Body.email,
+        });
+
+        if (isDuplicateEmail && isDuplicateEmail.id !== id) {
+          throw new ConflictException(new Error('Email already exists'));
+        }
+      }
+
       const updatedUser = await this.userService.findOneAndUpdate(query, Body);
       return updatedUser;
     } catch (error) {
