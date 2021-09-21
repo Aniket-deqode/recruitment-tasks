@@ -33,5 +33,12 @@ $ npm run start:dev
 # unit tests
 $ npm run test
 
+```
+
+# docker
+
+$ docker-compose up --build
+
+```
 
 ```
