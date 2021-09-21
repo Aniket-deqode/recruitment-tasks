@@ -35,9 +35,16 @@ $ npm run test
 
 ```
 
-# docker
+# Docker
 
 ```bash
+# Docker will run on 8080 port
 $ docker-compose up --build
 
 ```
+
+## Swagger and Postman
+
+- Recruitment-task.postman_collection.json present in project directory can be imported in postman and used to call exposed APIs.
+- Swagger UI can be access on this route: http://localhost:3000/api.
+- Swagger documentation includes all the required details to call the exposed APIs including examples and sample responses.
