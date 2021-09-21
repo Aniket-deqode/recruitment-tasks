@@ -37,8 +37,7 @@ $ npm run test
 
 # docker
 
+```bash
 $ docker-compose up --build
-
-```
 
 ```
