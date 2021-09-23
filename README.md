@@ -6,8 +6,9 @@ Recruitment Task Which Performs CRUD operations on User
 
 ## Prerequisite
 
-- local mongo db instance url or deployment mongo instance url.
+- Nest Js.
 - Node JS
+- MongoDb Instance
 
 ## Installation
 
@@ -45,5 +46,5 @@ $ docker-compose up --build
 
 ## Swagger and Postman
 
--Swagger can be accessed on localhost:3000/api route
--postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
+- Swagger can be accessed on localhost:3000/api route.          
+- postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
