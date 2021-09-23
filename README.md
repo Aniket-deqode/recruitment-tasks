@@ -12,28 +12,28 @@ Recruitment Task Which Performs CRUD operations on User
 ## Installation
 
 ```bash
-$ cd <project-directory>
-$ cp .sample.env .env
+$ npm i -g @nestjs/cli
 $ npm install
+$ touch .env
+```
+
+## ENV Sample 
+```bash
+PORT=3000
+MONGO_URL=mongodb+srv:2707//localhost/dbName
+
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ npm run start or $ npm start
 
 # watch mode
 $ npm run start:dev
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-```
 
 # Docker
 
@@ -45,6 +45,5 @@ $ docker-compose up --build
 
 ## Swagger and Postman
 
-- Recruitment-task.postman_collection.json present in project directory can be imported in postman and used to call exposed APIs.
-- Swagger UI can be access on this route: http://localhost:3000/api.
-- Swagger documentation includes all the required details to call the exposed APIs including examples and sample responses.
+-Swagger can be accessed on localhost:3000/api route
+-postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
