@@ -4,19 +4,25 @@
 
 Recruitment Task Which Performs CRUD operations on User
 
-## Prerequisite
+# Pre-requisites
+- Install [Node.js](https://nodejs.org/en/) version 12.0.0
+- Install .[Nest.Js](https://docs.nestjs.com/first-steps)
 
-- Nest Js.
-- Node JS
-- MongoDb Instance
-
-## Installation
-
-```bash
+# Getting started
+- Clone the repository
+```
+git clone  <git lab template url> <project_name>
+```
+- Install dependencies
+ 
+```
 $ npm i -g @nestjs/cli
 $ npm install
 $ touch .env
+cd <project_name>
+npm install
 ```
+
 
 ## ENV Sample 
 ```bash
@@ -24,17 +30,12 @@ PORT=3000
 MONGO_URL=mongodb+srv:2707//localhost/dbName
 
 ```
-
-## Running the app
-
-```bash
-# development
-$ npm run start or $ npm start
-
-# watch mode
-$ npm run start:dev
+- Build and run the project
 ```
-
+npm run start
+npm run start:dev (Watch mode)
+```
+  Navigate to `http://localhost:3000`
 
 # Docker
 
@@ -44,7 +45,7 @@ $ docker-compose up --build
 
 ```
 
-## Swagger and Postman
+- API Document endpoints
 
-- Swagger can be accessed on localhost:3000/api route.          
-- postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
+ swagger UI Endpoint : http://localhost:3000/api 
+ postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
