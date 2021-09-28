@@ -47,5 +47,5 @@ npm run start:dev (Watch mode)
 
 - API Document endpoints
 
- Swagger UI Endpoint : http://localhost:3000/api 
- Postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
+ - Swagger UI Endpoint : http://localhost:3000/api 
+ - Postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
