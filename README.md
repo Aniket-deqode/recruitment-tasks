@@ -7,6 +7,7 @@ Recruitment Task For User Management
 # Pre-requisites
 - Install [Node.Js](https://nodejs.org/en/) version 12.0.0
 - Install [Nest.Js](https://docs.nestjs.com/first-steps) version 8.1.1
+- Install [MongoDb](https://docs.mongodb.com/) Localy or connect to cloud [MongoDB](https://account.mongodb.com/account/login?n=%2Fv2%2F61409752355aae578bdee77f&nextHash=%23clusters)
 
 # Getting started
 - Clone the repository
