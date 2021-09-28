@@ -6,7 +6,7 @@ Recruitment Task Which Performs CRUD operations on User
 
 # Pre-requisites
 - Install [Node.js](https://nodejs.org/en/) version 12.0.0
-- Install .[Nest.Js](https://docs.nestjs.com/first-steps)
+- Install .[Nest.Js](https://docs.nestjs.com/first-steps) version 8.1.1
 
 # Getting started
 - Clone the repository
@@ -16,11 +16,10 @@ git clone  <git lab template url> <project_name>
 - Install dependencies
  
 ```
-$ npm i -g @nestjs/cli
-$ npm install
-$ touch .env
 cd <project_name>
-npm install
+ npm i -g @nestjs/cli
+ npm install
+ touch .env
 ```
 
 
