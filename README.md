@@ -2,11 +2,11 @@
 
 ## Description
 
-Recruitment Task Which Performs CRUD operations on User
+Recruitment Task For User Management
 
 # Pre-requisites
-- Install [Node.js](https://nodejs.org/en/) version 12.0.0
-- Install .[Nest.Js](https://docs.nestjs.com/first-steps) version 8.1.1
+- Install [Node.Js](https://nodejs.org/en/) version 12.0.0
+- Install [Nest.Js](https://docs.nestjs.com/first-steps) version 8.1.1
 
 # Getting started
 - Clone the repository
@@ -29,7 +29,7 @@ PORT=3000
 MONGO_URL=mongodb+srv:2707//localhost/dbName
 
 ```
-- Build and run the project
+- Running & Building the project
 ```
 npm run start
 npm run start:dev (Watch mode)
@@ -40,11 +40,12 @@ npm run start:dev (Watch mode)
 
 ```bash
 # Docker will run on 8080 port
-$ docker-compose up --build
+ cd <project_name>
+ docker-compose up --build
 
 ```
 
 - API Document endpoints
 
- swagger UI Endpoint : http://localhost:3000/api 
- postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
+ Swagger UI Endpoint : http://localhost:3000/api 
+ Postman collection is also present in project directory with name as Recruitment-task.postman_collection.json
